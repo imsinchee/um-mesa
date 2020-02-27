@@ -111,7 +111,7 @@ window.onload = function() {
         }
         document.getElementById("myAudio").play();
         document.getElementById("myAudio").onended = function(){
-            responsiveVoice.speak(applicant_info)
+            responsiveVoice.speak(company_name + " calling " + applicant_info)
         }
 
         var call_again = firebase.database().ref('MESA/'+company_name+"/call");
@@ -120,7 +120,7 @@ window.onload = function() {
             if (to_call == 1){
                 document.getElementById("myAudio").play();
                 document.getElementById("myAudio").onended = function(){
-                    responsiveVoice.speak(applicant_info)
+                    responsiveVoice.speak(company_name + " calling " + applicant_info)
                 }
                 db.ref('MESA/'+company_name+'/call').set(0);
             }
